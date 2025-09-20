@@ -1,38 +1,494 @@
-.App {
-  text-align: center;
+:root {
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[id] {
+    scroll-margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    width: 90%;
+    margin: 0 auto;
+    font-family: Arial;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width:768px) {
+    .container {
+        width: 90%;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width:1200px) {
+    .container {
+        width: 1200px;
+    }
+
+}
+
+@media(max-width : 920px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .header-info h1 {
+        font-size: 2em !important;
+    }
+
+    .header-info h2 {
+        font-size: 1em !important;
+    }
+}
+
+@media(max-width: 768px) {
+    header nav {
+        flex-direction: row;
+    }
+
+    header nav ul {
+        display: none !important;
+    }
+
+}
+
+
+
+/*.container-fluid{
+    width: 100%;
+}*/
+header {
+    background-image: linear-gradient(to bottom,
+            rgba(7, 2, 54, 0.4),
+            rgba(7, 2, 54, 0.5),
+            rgba(7, 2, 54, 0.6)),
+        url("/public/img/307d9676101229.5c60022841d46.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    background-position: top;
+    color: white;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    list-style: none;
+    transition: color 3s ease;
+}
+
+header nav ul a {
+    transition: color .3s ease;
+    text-decoration: none;
+    color: #ffff;
+}
+
+header nav ul a:hover {
+    color: rgb(255, 191, 0);
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: rgb(255, 191, 0);
+}
+
+.container .header-info {
+    margin-top: -25em;
+}
+
+.container .header-info h1 {
+    font-size: 4em;
+}
+
+.container .header-info h2 {
+    font-size: 1.5em;
+}
+
+.container .header-search {
+    margin-top: 50px;
+    background-color: white;
+    height: 100px;
+}
+
+
+.articles {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.articles .article {
+    flex: 1;
+    height: 500px;
+    box-shadow: -7px 3px 6px 0px #d1b7b7;
+    transition: background-color .3s ease;
+}
+
+.articles img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.article-title {
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    padding-top: 20px;
+    gap: 15px;
+}
+
+.article-title span {
+    font-size: 34px;
+    border: 1px solid rgb(242, 242, 36);
+    background-color: rgb(242, 242, 36);
+    box-shadow: -3px 3px 5px 0px gray;
+    color: #000000;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.articles .article:hover {
+    background-color: yellow;
+}
+
+.articles .article:hover .article-title span {
+    background-color: rgb(255, 255, 255);
+
+}
+
+@media(max-width: 769px) {
+    .articles img {
+        height: 250px;
+    }
+
+    .articles .article {
+        height: 350px;
+    }
+}
+
+@media(max-width: 700px) {
+    .articles {
+        flex-direction: column;
+    }
+
+    .articles img {
+        height: 350px;
+    }
+
+    .articles .article {
+        height: 530px;
+    }
+}
+
+.why-housesale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
+}
+
+.why-info {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.why-info p:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: rgb(61, 60, 60);
+}
+
+.why-info img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.why-housesale-box {
+    flex: 2;
+}
+
+.why-housesale-img {
+    flex: 1;
+    position: relative;
+}
+
+.why-housesale-img img {
+    width: 100%;
+    object-fit: cover;
+    height: 490px;
+    border-radius: 5px;
+}
+
+.why-housesale-img::after {
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    content: "";
+    width: 200px;
+    height: 350px;
+    display: block;
+    background-color: rgb(255, 200, 57);
+    border-radius: 5px;
+    z-index: -1;
+}
+
+@media(max-width: 1000px) {
+    .why-housesale {
+        flex-direction: column;
+    }
+
+    .why-housesale-img img {
+        height: 300px;
+        object-position: 0 57%;
+    }
+
+    .why-housesale-img::after {
+        display: none;
+    }
+}
+
+.phon {
+    margin-top: 2em;
+    background-color: rgba(255, 203, 70, 0.606);
+    padding: 2em 4em;
+    font-size: 150%;
+    margin-bottom: 3em;
+}
+
+.phon input {
+    width: 29em;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar button {
+    font-weight: bold;
+    width: 73px;
+    height: 33px;
+    border: none;
+    background-color: rgb(255, 191, 0);
+    position: absolute;
+    top: 3px;
+    left: 333px;
+    border-radius: 4px;
+    transition: background-color .3s ease;
+}
+.search-bar button:hover{
+    background-color: rgba(255, 166, 0, 0.692);
+}
+
+@media(max-width: 565px) {
+    .phon input {
+        width: 19em;
+    }
+
+    .search-bar button {
+        left: 199px;
+    }
+
+    .phon {
+        font-size: 110%;
+    }
+}
+
+@media(max-width: 400px) {
+    .phon input {
+        width: 15em;
+    }
+
+    .search-bar button {
+        left: 147px;
+    }
+
+    .phon {
+        font-size: 90%;
+    }
+}
+
+.house-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.house-img img {
+    width: 100%;
+    height: 20em;
+    object-fit: cover;
+}
+
+@media(max-width: 769px) {
+    .house-img {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 5px;
+    }
+}
+
+@media(max-width: 500px) {
+    .house-img {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+}
+
+
+.more-call {
+    margin-top: 4em;
+    display: flex;
+}
+
+.more-call-txt {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.more-call-txt p {
+    margin-bottom: 30px;
+}
+
+.more-call-txt button {
+    background-color: rgb(255, 191, 0);
+    padding: .5em 2em;
+    border: none;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: background-color .3s ease;
+}
+.more-call-txt button:hover{
+    background-color: rgba(255, 166, 0, 0.692);
+}
+
+.more-call-pic {
+    flex: 1;
+    display: flex;
+}
+
+.more-call-pic img {
+    height: 20em;
+    width: 12em;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+@media(max-width:1200px) {
+    .more-call {
+        flex-direction: column;
+    }
+
+    .more-call-txt button {
+        display: block;
+        width: 50%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .more-call-txt {
+        width: 90%;
+        font-size: 2em;
+    }
+
+    .more-call-pic img {
+        width: 16em;
+    }
+}
+
+@media(max-width:869px) {
+    .more-call-txt {
+        width: 100%;
+    }
+
+    .more-call-pic img {
+        height: 20em;
+        width: 14em;
+    }
+}
+
+@media(max-width:760px) {
+    .more-call-txt {
+        font-size: 1em;
+        width: 80%;
+    }
+
+    .more-call-pic {
+        flex-direction: column;
+        margin-left: 10px;
+        margin-left: 0;
+
+    }
+
+    .more-call-pic img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .more-call-txt button {
+        width: 70%;
+    }
+}
+
+.footer {
+    margin-top: 6em;
+    background-color: rgba(0, 0, 99, 0.966);
+    padding: 30px 0;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer ul{
+    list-style: none!important;
+}
+
+.footer a {
+    line-height: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color .3s ease;
+}
+.footer a:hover{
+    color: rgb(255, 191, 0);
+}
+
+@media(max-width:1070px) {
+    .footer ul {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
